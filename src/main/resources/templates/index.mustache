@@ -3,6 +3,28 @@
 
 </head>
 <body>
-    <div>{{msg}}</div>
+    <div>
+        <form method="post">
+            <input type="text" name="text" placeholder="Enter your message"/>
+            <input type="text" name="tag" placeholder="Enter tag"/>
+            <button type="submit">Post message</button>
+        </form>
+    </div>
+
+    <div>
+        <form method="post" action="/filter">
+            <input type="text" name="filter">
+            <button type="submit">Find</button>
+        </form>
+    </div>
+    </br>
+    <div>Message list</div>
+    {{#messages}}
+        <div>
+            <b>{{id}}</b>
+            <span>{{text}}</span>
+            <i>{{tag}}</i>
+        </div>
+    {{/messages}}
 </body>
 </html>
